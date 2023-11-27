@@ -3,17 +3,13 @@ from datetime import date
 
 # Updating EmployeeBase to reflect the new Employee model structure
 class PaseadorBase(BaseModel):
-    id                      : int    
-    nombre_completo         : str
-    apellidos_completos     : str
-    tipo_documento          : str
-    num_documento           : str
-    fecha_nacimiento        : date
-    num_celular             : int
-    email                   : str
+    id                      : int
+    id_usuario              : int    
     calificacion_general    : int
-    password                : str
+    id_mascota              : int
     paseos                  : list
+    mascota                 : str
+    usuario                 : str
     
 class PaseadorModel(PaseadorBase):
     id: int = Field(..., gt=0)  

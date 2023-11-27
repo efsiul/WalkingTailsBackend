@@ -12,9 +12,8 @@ class EstilizadoApi(BaseModel):
     tarifa_estilizado   : float
     calificacion        : int
     observaciones       : str
-    id_dueno_mascota    : int
     id_mascota          : int
-    dueno_mascota       : str
+    mascota             : str
     
 class EstilizadoModel(BaseModel):
     def to_api(self):

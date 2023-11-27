@@ -13,6 +13,5 @@ class Estilizado(Base):
     tarifa_estilizado   = Column(Float)
     calificacion        = Column(Integer)
     observaciones       = Column(String)
-    id_dueno_mascota    = Column(Integer, ForeignKey('duenos_mascotas.id'))
     id_mascota          = Column(Integer, ForeignKey('mascotas.id'))
-    dueno_mascota       = relationship("DueñoMascota", back_populates="estilizados")
+    mascota             = relationship("Mascota", back_populates="estilizados")

@@ -10,4 +10,6 @@ class Mascota(Base):
     nombre_mascota  = Column(String)
     edad_mascota    = Column(String)
     observaciones   = Column(String)
+    paseos          = relationship("Paseo",      back_populates="mascota")
     enfermerias     = relationship("Enfermeria", back_populates="mascota")
+    estilizados     = relationship("Estilizado", back_populates="mascota")

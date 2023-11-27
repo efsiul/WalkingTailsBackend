@@ -1,7 +1,7 @@
 from fastapi                    import FastAPI
 from db.database                import engine, create_all_tables
 from fastapi.middleware.cors    import CORSMiddleware
-from app.main.routers           import duenoMascota, paseador, paseo, servicio, estilizado, mascota, enfermeria  
+from app.main.routers           import duenoMascota, paseador, paseo, servicio, estilizado, mascota, enfermeria , usuario
 
 app     = FastAPI()
 origins = ["http://localhost:3000"]
@@ -23,3 +23,4 @@ app.include_router(servicio.router,     prefix="/servicio",     tags=["servicio"
 app.include_router(estilizado.router,   prefix="/estilizado",   tags=["estilizado"])
 app.include_router(mascota.router,      prefix="/mascota",      tags=["mascota"])
 app.include_router(enfermeria.router,   prefix="/enfermeria",   tags=["enfermeria"])
+app.include_router(usuario.router,      prefix="/usuario",      tags=["usuario"])

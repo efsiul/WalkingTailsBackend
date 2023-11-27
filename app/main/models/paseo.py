@@ -18,3 +18,4 @@ class Paseo(Base):
     id_paseador         = Column(Integer, ForeignKey('paseadores.id'))
     id_mascota          = Column(Integer, ForeignKey('mascotas.id'))
     paseador            = relationship("Paseador",  back_populates="paseos")
+    mascota             = relationship("Mascota",   back_populates="paseos")

@@ -14,6 +14,7 @@ class PaseoApi(BaseModel):
     id_paseador         : int
     id_mascota          : int
     paseador            : str
+    mascota             : str
     
 class PaseoModel(BaseModel):
     def to_api(self):

@@ -10,7 +10,9 @@ class MascotaBase(BaseModel):
     nombre_mascota  : str
     edad_mascota    : str
     observaciones   : str
+    paseos          : list
     enfermerias     : list
+    estilizados     : list
     
 class MascotaModel(MascotaBase):
     id: int = Field(..., gt=0)  
