@@ -1,0 +1,13 @@
+alembic 
+annotated-types 
+anyio 
+fastapi[all]
+psycopg-binary
+psycopg2
+pydantic 
+pydantic-settings 
+pydantic_core 
+SQLAlchemy
+starlette
+uvicorn
+websockets

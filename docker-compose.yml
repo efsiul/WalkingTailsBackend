@@ -1,0 +1,27 @@
+services:
+  # Servicio para la base de datos PostgreSQL
+  db:
+    container_name: walkingTailsDB
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 841205
+      POSTGRES_DB: walking_tails_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  # Servicio para la aplicación FastAPI
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://postgres:841205@db:5432/walking_tails_db 
+    # command: ["./wait-for-it.sh", "--timeout=30", "db:5432", "--", "uvicorn", "app.main.main:app", "--host", "0.0.0.0", "--port", "3000"]
+
+volumes:
+  postgres_data:

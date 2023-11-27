@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+
+# PyCache
+__pycache__/
+*.pyc
+
+# Database files (if SQLite used)
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Alembic
+db/versions/
